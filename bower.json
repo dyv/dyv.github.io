@@ -1,0 +1,16 @@
+{
+  "name": "dylan",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dyv/dyv.github.io",
+  "authors": [
+    "Dylan Visher <dylan.visher@yale.edu>"
+  ],
+  "description": "personal website",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "core-elements": "Polymer/core-elements#~0.3.3",
+    "paper-elements": "Polymer/paper-elements#~0.3.3"
+  }
+}
