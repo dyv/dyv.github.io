@@ -32,24 +32,30 @@
        text-transform: none;
      }
 
+     /*core-toolbar {
+       background-color: #2376A8;
+     }*/
+     core-scaffold {
+       background-color: #2D8CCF;
+     }
+
+
   </style>
   </head>
   <body>
     <core-scaffold>
-      <core-header-panel mode="scroll" navigation flex>
+      <core-header-panel mode="scroll" shadow="true" navigation flex>
 	<core-toolbar id="navheader">
 	  <span>Menu</span>
 	</core-toolbar>
 
 	<core-menu>
-	  <core-item><paper-button label="Home"></paper-button></core-item>
 	  <core-item><paper-button label="Spoiler Alert"></paper-button></core-item>
 	  <core-item><paper-button label="Object Tracking"></paper-button></core-item>
 	  <core-item><paper-button label="Housing Website"></paper-button></core-item>
 	  <core-item><paper-button label="Neural Networks"></paper-button></core-item>
 	  <core-item><paper-button label="Bond Graph Analysis"></paper-button></core-item>
 	  <core-item><paper-button label="Video-Camera Smartboard"></paper-button></core-item>
-	  <core-item><paper-button label="Contact"></paper-button></core-item>
 	  <core-item><paper-button label="Resume"></paper-button></core-item>
 	</core-menu>
       </core-header-panel>
@@ -57,7 +63,7 @@
       <div tool>Dylan Visher</div>
 
       <div class="content">
-
+	If drawer is hidden, press button to display drawer.
       </div>
     </core-scaffold>
   </body>
