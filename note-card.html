@@ -3,69 +3,79 @@
 <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
 
 <polymer-element name="note-card" attribues="z title entry" on-mouseover="{{overAction}}" on-mouseout="{{outAction}}">
-  <template>
-    <style>
-     :host {
-       display: block;
-       background-color: white;
-       padding: 20px;
-       margin: 15px;
-       font-size: 1.2rem;
-       font-weight: 300;
-       overflow: hidden;
-     }
-     #close {
-       float: right;
-       color: black;
-       background: white;
-     }
-     #close:hover {
-       fill: #FF0000;
-     }
-     #close::shadow #ripple {
-       color: #FF0000;
-     }
-    </style>
-    <paper-icon-button id="close" icon="close" on-click="{{onClose}}"></paper-icon-button>
-    <div>
-      <template if="{{ title !== undefined }}}">
-	<h3>{{title}}</h3>
-      </template>
-      <div id="container"></div>
-    </div>
-    <paper-shadow z="{{z}}" animated></paper-shadow>
-  </template>
-  <script>
-   Polymer('note-card', {
-     ready: function () {
-       console.log("Ready");
-       console.log(this);
-       console.log(this.$);
-       this.that = this;
-       this.closed = false;
-       this.up = true;
-       this.addEventListener('close', function () {this.$.style.dispay = "none"});
-       if (this.z === undefined) {
-	 console.log("Setting z");
-	 this.z = 2;
-       }
-       this.$.container.innerHTML = this.entry;
-       //console.log("Showcard Created with UID: " + this.uid);
-     },
-     publish: {
-       z: {value: 0, reflect: true}
-       //uid: {value: 0, reflect: true}
-     },
-     onClose: function () {
-       this.closed = true;
-       this.fire('close', {obj: this});
-     },
-     overAction: function() {
-       this.z = 4;
-     },
-     outAction: function () {
-       this.z = 2;
-     }
-   });
-  </script>
+    <template>
+        <style>
+            :host {
+                display: block;
+                background-color: white;
+                padding: 20px;
+                margin: 15px;
+                font-size: 1.2rem;
+                font-weight: 300;
+                overflow: hidden;
+            }
+            #close {
+                float: right;
+                color: black;
+                background: white;
+            }
+            #close:hover {
+                fill: #FF0000;
+            }
+            #close::shadow #ripple {
+                color: #FF0000;
+            }
+        </style>
+        <paper-icon-button id="close" icon="close" on-click="{{onClose}}"></paper-icon-button>
+        <div>
+            <template if="{{ title !== undefined }}}">
+                <h3>{{title}}</h3>
+            </template>
+            <div id="container"></div>
+        </div>
+        <paper-shadow z="{{z}}" animated></paper-shadow>
+    </template>
+    <script>
+        Polymer('note-card', {
+            ready: function() {
+                console.log("Ready");
+                console.log(this);
+                console.log(this.$);
+                this.that = this;
+                this.closed = false;
+                this.up = true;
+                this.addEventListener('close', function() {
+	            console.log("Attempting to Close");
+	            console.log(this.style);
+                    this.style.display = "none";
+	            console.log(this.style);
+                });
+                if (this.z === undefined) {
+                    console.log("Setting z");
+                    this.z = 2;
+                }
+                this.$.container.innerHTML = this.entry;
+                //console.log("Showcard Created with UID: " + this.uid);
+            },
+            publish: {
+                z: {
+                    value: 0,
+                    reflect: true
+                }
+                //uid: {value: 0, reflect: true}
+            },
+            onClose: function() {
+                this.closed = true;
+                this.fire('close', {
+                    obj: this
+                });
+            },
+            overAction: function() {
+                this.z = 4;
+            },
+            outAction: function() {
+                this.z = 2;
+            }
+        });
+    </script>
 </polymer-element>
