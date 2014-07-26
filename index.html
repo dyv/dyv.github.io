@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <title>Dylan Visher</title>
     <script src="bower_components/platform/platform.js"></script>
 
@@ -12,59 +13,29 @@
     <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
     <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
-
+    <link rel="import" href="menu-bar.html">
+    <link rel="import" href="note-card.html">
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
     <style>
-     body {
-       font-family: sans-serif;
-     }
-     #navheader {
-       background-color: #56BA89;
-     }
-     core-menu {
-       height: 100%;
-     }
+        body {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
 
-     .content {
-       padding: 20px;
-     }
+<body unresolved>
+    <menu-bar>
+      <note-card z="2" title="About">
+          <p>Hi my name is Dylan Visher and I am a student at Computer Science Major at Yale University. I am interested in Machine Learning, Programming Languages, Server-Side programming, and much more. I have had the honor of working in Yale's "Scaz" Labs under Professor Brian Scassellati and Brad Hayes on a project in Social Hierarchical Learning. I have also worked on many personal projects and team projects. The menu bar to the left will help you navigate through what I consider some of my highlights so far.</p>
+	  <p>My github account is: <a href="http://github.com/dyv">http://github.com/dyv</a></p>
+        </note-card>
+	<template id="posts" is="auto-binding" repeat="{{ post in posts }}">
+	  <note-card z="2" title="{{post.title}}">
+	    {{post.entry}}
+	  </note-card>
+	</template>
+    </menu-bar>
+</body>
 
-     paper-button {
-       text-transform: none;
-     }
-
-     /*core-toolbar {
-       background-color: #2376A8;
-     }*/
-     core-scaffold {
-       background-color: #2D8CCF;
-     }
-
-
-  </style>
-  </head>
-  <body>
-    <core-scaffold>
-      <core-header-panel mode="scroll" shadow="true" navigation flex>
-	<core-toolbar id="navheader">
-	  <span>Menu</span>
-	</core-toolbar>
-
-	<core-menu>
-	  <core-item><paper-button label="Spoiler Alert"></paper-button></core-item>
-	  <core-item><paper-button label="Object Tracking"></paper-button></core-item>
-	  <core-item><paper-button label="Housing Website"></paper-button></core-item>
-	  <core-item><paper-button label="Neural Networks"></paper-button></core-item>
-	  <core-item><paper-button label="Bond Graph Analysis"></paper-button></core-item>
-	  <core-item><paper-button label="Video-Camera Smartboard"></paper-button></core-item>
-	  <core-item><paper-button label="Resume"></paper-button></core-item>
-	</core-menu>
-      </core-header-panel>
-
-      <div tool>Dylan Visher</div>
-
-      <div class="content">
-	If drawer is hidden, press button to display drawer.
-      </div>
-    </core-scaffold>
-  </body>
 </html>
