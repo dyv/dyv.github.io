@@ -26,13 +26,10 @@
 
 <body unresolved>
     <menu-bar>
-      <note-card z="2" title="About">
-          <p>Hi my name is Dylan Visher and I am a student at Computer Science Major at Yale University. I am interested in Machine Learning, Programming Languages, Server-Side programming, and much more. I have had the honor of working in Yale's "Scaz" Labs under Professor Brian Scassellati and Brad Hayes on a project in Social Hierarchical Learning. I have also worked on many personal projects and team projects. The menu bar to the left will help you navigate through what I consider some of my highlights so far.</p>
-	  <p>My github account is: <a href="http://github.com/dyv">http://github.com/dyv</a></p>
+      <note-card z="2" title="About" entry="<p>Hi my name is Dylan Visher and I am a student at Computer Science Major at Yale University. I am interested in Machine Learning, Programming Languages, Server-Side programming, and much more. I have had the honor of working in Yale's 'Scaz' Labs under Professor Brian Scassellati and Brad Hayes on a project in Social Hierarchical Learning. I have also worked on many personal projects and team projects. The menu bar to the left will help you navigate through what I consider some of my highlights so far.</p><p>My github account is: <a href='http://github.com/dyv'>http://github.com/dyv</a></p>">
         </note-card>
 	<template id="posts" is="auto-binding" repeat="{{ post in posts }}">
-	  <note-card z="2" title="{{post.title}}">
-	    {{post.entry}}
+	  <note-card z="2" title="{{post.title}}" entry="{{post.entry}}">
 	  </note-card>
 	</template>
     </menu-bar>

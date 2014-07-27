@@ -40,29 +40,27 @@
             ready: function() {
                 console.log("Ready");
                 console.log(this);
-                console.log(this.$);
+	        console.log(this.entry);
                 this.that = this;
                 this.closed = false;
                 this.up = true;
                 this.addEventListener('close', function() {
-	            console.log("Attempting to Close");
-	            console.log(this.style);
                     this.style.display = "none";
-	            console.log(this.style);
                 });
                 if (this.z === undefined) {
-                    console.log("Setting z");
                     this.z = 2;
                 }
                 this.$.container.innerHTML = this.entry;
-                //console.log("Showcard Created with UID: " + this.uid);
             },
             publish: {
                 z: {
                     value: 0,
                     reflect: true
-                }
-                //uid: {value: 0, reflect: true}
+                },
+	        entry: {
+	          value: "empty",
+	          reflect: true
+	        }
             },
             onClose: function() {
                 this.closed = true;
