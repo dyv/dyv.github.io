@@ -13,6 +13,8 @@
                 font-size: 1.2rem;
                 font-weight: 300;
                 overflow: hidden;
+                user-select: text;
+                -webkit-user-select: text;
             }
             #close {
                 float: right;
@@ -33,6 +35,7 @@
             </template>
             <div id="container"></div>
         </div>
+        <content></content>
         <paper-shadow z="{{z}}" animated></paper-shadow>
     </template>
     <script>
@@ -58,7 +61,7 @@
                     reflect: true
                 },
 	        entry: {
-	          value: "empty",
+	          value: undefined,
 	          reflect: true
 	        }
             },

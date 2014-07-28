@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dylan Visher</title>
+    <script src="bower_components/platform/platform.js"></script>
+
+    <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="bower_components/core-menu/core-menu.html">
+    <link rel="import" href="bower_components/core-item/core-item.html">
+    <link rel="import" href="bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="bower_components/core-drawer-panel/core-drawer-panel.html">
+    <link rel="import" href="bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/paper-shadow/paper-shadow.html">
+    <link rel="import" href="menu-bar.html">
+    <link rel="import" href="note-card.html">
+    <script src="jquery.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body unresolved>
+    <menu-bar>
+      <note-card z="2" title="About" entry="<p>Hi my name is Dylan Visher and I am a student at Computer Science Major at Yale University. I am interested in Machine Learning, Programming Languages, Server-Side programming, and much more. I have had the honor of working in Yale's 'Scaz' Labs under Professor Brian Scassellati and Brad Hayes on a project in Social Hierarchical Learning. I have also worked on many personal projects and team projects. The menu bar to the left will help you navigate through what I consider some of my highlights so far.</p><p>My github account is: <a href='http://github.com/dyv'>http://github.com/dyv</a></p>">
+        </note-card>
+	<template id="posts" is="auto-binding" repeat="{{ post in posts }}">
+	  <note-card z="2" title="{{post.title}}" entry="{{post.entry}}">
+	  </note-card>
+	</template>
+    </menu-bar>
+</body>
+
+</html>
