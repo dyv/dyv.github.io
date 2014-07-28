@@ -13,8 +13,6 @@
                 font-size: 1.2rem;
                 font-weight: 300;
                 overflow: hidden;
-                user-select: text;
-                -webkit-user-select: text;
             }
             #close {
                 float: right;
@@ -27,6 +25,9 @@
             #close::shadow #ripple {
                 color: #FF0000;
             }
+	    .paper-shadow {
+	     pointer-events: none;
+	    }
         </style>
         <paper-icon-button id="close" icon="close" on-click="{{onClose}}"></paper-icon-button>
         <div>
