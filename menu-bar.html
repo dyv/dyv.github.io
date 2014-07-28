@@ -41,6 +41,9 @@
                 </core-toolbar>
 
                 <core-menu>
+		    <core-item>
+		      <paper-button id="HOME" label="Home"></paper-button>
+		    </core-item>
                     <core-item>
                         <paper-button id="SA" label="No Spoilers Please"></paper-button>
                     </core-item>
@@ -65,7 +68,7 @@
                 </core-menu>
             </core-header-panel>
 
-            <div tool>Dylan Visher</div>
+            <div tool><a href="/">Dylan Visher</a></div>
             <div id="content">
                 <content></content>
             </div>
@@ -75,13 +78,17 @@
         Polymer('menu-bar', {
             ready: function() {
                 console.log(this);
-                var sa = this.$.SA
+	        var h = this.$.HOME;
+	        h.addEventListener('click', function() {
+	            window.location.href = "/";
+	        });
+                var sa = this.$.SA;
                 sa.addEventListener('click', function() {
-                    window.location.href = "http://nospoilersplease.appspot.com"
+                    window.location.href = "http://nospoilersplease.appspot.com";
                 });
-                var ot = this.$.OT
+                var ot = this.$.OT;
                 ot.addEventListener('click', function() {
-                    window.location.href = "ObjectTracker.html"
+                    window.location.href = "ObjectTracker.html";
                 });
                 var hw = this.$.HW;
                 hw.addEventListener('click', function() {
@@ -89,11 +96,11 @@
                 });
                 var nn = this.$.NN;
                 nn.addEventListener('click', function() {
-                    window.location.href = "NeuralNetworks.html"
+                    window.location.href = "NeuralNetworks.html";
                 });
                 var bg = this.$.BG;
                 bg.addEventListener('click', function() {
-                    window.location.href = "BondGraph.html"
+                    window.location.href = "BondGraph.html";
                 });
                 var sb = this.$.SB;
                 sb.addEventListener('click', function() {
