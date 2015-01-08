@@ -6,4 +6,4 @@ title = "about"
 
 My name is Dylan Visher and I am a junior at Yale University studying Computer
 Science. Some of my interests include: Distributed Systems, Language Design,
-Data-Driven Design.
+Data-Driven Design and More.
